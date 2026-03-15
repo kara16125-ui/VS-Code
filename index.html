@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE WEAR | ហាងខោអាវលំដាប់ពិភពលោក</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Freehand&family=Hanuman:wght@300;400;700&display=swap');
+        body { font-family: 'Hanuman', serif; transition: background-color 0.3s; }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441997629053-7551489668e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; }
+        /* បន្ថែម Style សម្រាប់ Dark Mode */
+        .dark body { background-color: #1a202c; color: white; }
+        .dark nav { background-color: #2d3748; color: white; }
+        .dark .bg-white { background-color: #2d3748 !important; color: white !important; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-tighter text-black dark:text-white">LUXE<span class="text-red-600">WEAR</span></a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="hover:text-red-600 transition">បុរស</a>
+                <a href="#" class="hover:text-red-600 transition">នារី</a>
+                <a href="#" class="hover:text-red-600 transition">មកថ្មី</a>
+                <button onclick="toggleDarkMode()" class="hover:text-red-600 transition"><i class="fa-solid fa-moon"></i></button>
+            </div>
+            <div class="flex items-center space-x-5 text-xl">
+                <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-red-600"></i>
+                <div class="relative">
+                    <i class="fa-solid fa-cart-shopping cursor-pointer hover:text-red-600"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center transition-all duration-200">0</span>
+                </div>
+                <i class="fa-regular fa-user cursor-pointer hover:text-red-600"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
+        <div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">សួស្តីឆ្នាំថ្មី ២០២៧</h1>
+            <p class="text-lg md:text-xl mb-8">ស្វែងរកស្ទាយ៍ដែលសាកសមបំផុតសម្រាប់អ្នក ជាមួយគុណភាពខ្ពស់បំផុត។</p>
+            <a href="contact.html" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-red-600 hover:text-white transition duration-300">ទិញឥឡូវនេះ</a>
+        </div>
+    </section>
+
+    <section id="shop" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold mb-10 text-center">ផលិតផលពេញនិយម</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="group">
+                <div class="relative overflow-hidden rounded-lg bg-gray-200 aspect-[3/4]">
+                    <img src="https://images​unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="T-Shirt" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <button onclick="addToCart()" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-6 py-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300 shadow-lg font-bold">+ បន្ថែមក្នុងកន្ត្រក</button>
+                </div>
+                <div class="mt-4 text-center">
+                    <h3 class="text-lg font-medium">អាវយឺត Premium Cotton</h3>
+                    <p class="text-red-600 font-bold">$25.00</p>
+                    <div class="flex justify-center space-x-2 my-2">
+                        <button class="border border-gray-300 px-2 py-1 text-xs hover:bg-black hover:text-white transition dark:border-gray-600">S</button>
+                        <button class="border border-gray-300 px-2 py-1 text-xs hover:bg-black hover:text-white transition dark:border-gray-600">M</button>
+                        <button class="border border-gray-300 px-2 py-1 text-xs hover:bg-black hover:text-white transition dark:border-gray-600">L</button>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="relative overflow-hidden rounded-lg bg-gray-200 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80" alt="Jacket" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <button onclick="addToCart()" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-6 py-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300 shadow-lg font-bold">+ បន្ថែមក្នុងកន្ត្រក</button>
+                </div>
+                <div class="mt-4 text-center">
+                    <h3 class="text-lg font-medium">អាវរងាស្បែក ស៊េរីឆ្នាំ ២០២៦</h3>
+                    <p class="text-red-600 font-bold">$120.00</p>
+                    <div class="flex justify-center space-x-2 my-2">
+                        <button class="border border-gray-300 px-2 py-1 text-xs hover:bg-black hover:text-white transition dark:border-gray-600">S</button>
+                        <button class="border border-gray-300 px-2 py-1 text-xs hover:bg-black hover:text-white transition dark:border-gray-600">M</button>
+                        <button class="border border-gray-300 px-2 py-1 text-xs hover:bg-black hover:text-white transition dark:border-gray-600">L</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-12">
+        <section id="contact" class="bg-gray-100 dark:bg-gray-900 py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white">ទំនាក់ទំនងយើង</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                <form action="#" class="space-y-4">
+                    <div>
+                        <label class="block mb-2 font-medium dark:text-gray-300">ឈ្មោះពេញ</label>
+                        <input type="text" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium dark:text-gray-300">អ៊ីមែល</label>
+                        <input type="email" placeholder="example@mail.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium dark:text-gray-300">សាររបស់អ្នក</label>
+                        <textarea rows="4" placeholder="តើអ្នកមានចម្ងល់អ្វីខ្លះ?" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition shadow-md">ផ្ញើសារឥឡូវនេះ</button>
+                </form>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-red-600 p-3 rounded-full text-white"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4 class="font-bold text-xl dark:text-white">ទីតាំងហាង</h4>
+                        <p class="text-gray-600 dark:text-gray-400">វិថីព្រះនរោត្តម, ភ្នំពេញ, ប្រទេសកម្ពុជា</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="bg-red-600 p-3 rounded-full text-white"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4 class="font-bold text-xl dark:text-white">លេខទូរស័ព្ទ</h4>
+                        <p class="text-gray-600 dark:text-gray-400">+855 12 345 678 / +855 98 765 432</p>
+                    </div>
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-inner h-64 border-4 border-white dark:border-gray-800">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7706603092004!2d104.921013!3d11.567089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513876936279%3A0xf09051d95368a5c3!2sIndependence%20Monument!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-gray-800 rounded-lg max-w-md w-full p-6 shadow-2xl">
+        <h2 class="text-2xl font-bold mb-4 border-bottom pb-2">បញ្ជីទំនិញក្នុងកន្ត្រក</h2>
+        <div id="cart-items" class="space-y-4 mb-6">
+            <p class="text-gray-500 italic">មិនទាន់មានទំនិញនៅឡើយ...</p>
+        </div>
+        <div class="border-t pt-4">
+            <div class="flex justify-between text-xl font-bold mb-6">
+                <span>សរុប៖</span>
+                <span id="total-price" class="text-red-600">$0.00</span>
+            </div>
+            <div class="flex space-x-3">
+                <button onclick="closeCheckout()" class="flex-1 border border-gray-300 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">បិទ</button>
+                <button onclick="alert('មុខងារបង់ប្រាក់ ABA នឹងមកដល់ឆាប់ៗ!')" class="flex-1 bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition">បង់ប្រាក់ឥឡូវនេះ</button>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="containeថr mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">LUXE WEAR</h3>
+                <p class="text-gray-400">យើងផ្តល់ជូននូវសម្លៀកបំពាក់ដែលមានគុណភាពខ្ពស់ និងទាន់សម័យបំផុតសម្រាប់លោកអ្នក។</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">តំណភ្ជាប់រហ័ស</h4>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">អំពីយើង</a></li>
+                    <li><a href="#" class="hover:text-white">សំនួរដែលសួរញឹកញាប់</a></li>
+                    <li><a href="#" class="hover:text-white">គោលការណ៍ដឹកជញ្ជូន</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">តាមដានយើង</h4>
+                <div class="flex justify-center md:justify-start space-x-6 text-2xl">
+                    <i class="fa-brands fa-facebook hover:text-blue-500 cursor-pointer">fd</i>
+                    <i class="fa-brands fa-instagram hover:text-pink-500 cursor-pointer">ss</i>
+                    <i class="fa-brands fa-tiktok hover:text-gray-400 cursor-pointer">kk</i>
+                </div>
+            </div>
+        </div>      
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2026 LUXE WEAR. រក្សាសិទ្ធិគ្រប់យ៉ាង
+        </div>
+    </footer>
+
+    <script >
+        
+        // បន្ថែម Event ចុចលើ Icon កន្ត្រកដើម្បីបើក Modal
+document.querySelector('.fa-cart-shopping').parentElement.onclick = openCheckout;
+
+function openCheckout() {
+    document.getElementById('checkout-modal').classList.remove('hidden');
+    let total = count * 25; 
+    document.getElementById('total-price').innerText = "$" + total + ".00";
+    
+    if(count > 0) {
+        document.getElementById('cart-items').innerHTML = `<p class="flex justify-between"><span>អាវយឺត Premium x ${count}</span> <span>$${total}</span></p>`;
+    }
+}
+
+function closeCheckout() {
+    document.getElementById('checkout-modal').classList.add('hidden');
+}
+        let count = 0;
+        const cartBadge = document.getElementById('cart-count');
+
+        function addToCart() {
+            count++;
+            cartBadge.innerText = count;
+            cartBadge.classList.add('scale-125', 'bg-green-500');
+            setTimeout(() => {
+                cartBadge.classList.remove('scale-125', 'bg-green-500');
+            }, 200);
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>
